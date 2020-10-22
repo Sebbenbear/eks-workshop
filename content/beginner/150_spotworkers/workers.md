@@ -6,7 +6,7 @@ draft: false
 ---
 We have our EKS Cluster and worker nodes already, but we need some Spot Instances configured as workers. We also need a Node Labeling strategy to identify which instances are Spot and which are on-demand so that we can make more intelligent scheduling decisions. We will use `eksctl` to launch new worker nodes that will connect to the EKS cluster.
 
-But first, we will add a new label to the OnDemand worker nodes
+But first, we will add a new label to the OnDemand worker nodes:
 
 ```bash
 kubectl label nodes --all 'lifecycle=OnDemand'
